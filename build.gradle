@@ -19,7 +19,7 @@ ext {
     versions = [
         appcompat                   : '1.0.0',
         recyclerview                : '1.0.0',
-        ktx                         : '1.0.0',
+        viewmodel                   : '2.0.0',
         lifecycle_viewmodel_ktx     : '2.0.0'
     ]
 }

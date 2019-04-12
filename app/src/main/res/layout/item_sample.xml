@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="item"
+            type="com.kvest.listadapter.Item"/>
+        <variable
+            name="handler"
+            type="com.kvest.listadapter.ItemHandler"/>
+    </data>
+    <LinearLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:padding="12dip"
+        android:gravity="center_vertical"
+        android:onClick="@{() -> handler.onItemSelected(item)}">
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@{item.name}"/>
+        <ImageButton
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                app:srcCompat="@drawable/ic_minus"
+                android:background="@null"
+                android:onClick="@{() -> handler.onDec(item.id)}"/>
+        <ImageButton
+                android:layout_width="48dip"
+                android:layout_height="48dip"
+                app:srcCompat="@drawable/ic_plus"
+                android:background="@null"
+                android:onClick="@{() -> handler.onInc(item.id)}"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dip"
+            android:text="@{Integer.toString(item.count)}"/>
+    </LinearLayout>
+</layout>

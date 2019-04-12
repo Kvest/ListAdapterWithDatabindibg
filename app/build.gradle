@@ -11,6 +11,8 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -32,9 +34,11 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$versions.appcompat"
     implementation "androidx.recyclerview:recyclerview:$versions.recyclerview"
 
-    //KTX
-    implementation "androidx.core:core-ktx:$versions.ktx"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle_viewmodel_ktx"
+    //Architecture components
+    implementation "androidx.arch.core:core-common:2.0.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$versions.viewmodel"
+    implementation "androidx.lifecycle:lifecycle-extensions:$versions.viewmodel"
+    kapt "androidx.lifecycle:lifecycle-compiler:$versions.viewmodel"
 
     //data binding
     kapt 'com.android.databinding:compiler:2.3.3'
