@@ -1,9 +1,12 @@
 package com.kvest.listadapter
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.kvest.listadapter.multiitem.MultiItemActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -33,5 +36,19 @@ class MainActivity : AppCompatActivity() {
                 adapter.submitList(items)
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_activity_menu, menu)
+
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.show_multilist) {
+            MultiItemActivity.start(this)
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }
