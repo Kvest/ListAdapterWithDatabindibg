@@ -1,5 +1,6 @@
 package com.kvest.listadapter.multiitem
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.recyclerview.widget.DiffUtil
 import com.kvest.listadapter.BR
@@ -23,6 +24,7 @@ class MultiItemAdapter(context: Context) : EasyMultiItemAdapter<Item>(context, D
             }
         }
 
+        @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(oldItem: Item, newItem: Item) = oldItem == newItem
     }
 }
